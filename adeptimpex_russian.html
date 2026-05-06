@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adept Impex — Оптовые поставки трав и цветов</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: #111;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .nav-brand small {
+      font-weight: 400;
+      font-size: 10px;
+      color: #aaa;
+      letter-spacing: 0.5px;
+    }
+
+    /* HERO */
+
+    .hero-sub {
+      font-size: 16px;
+      margin: 15px 0;
+      color: #fff;
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .hero-trust span {
+      background: #f5f5f5;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    .hero-cta {
+      margin-top: 32px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+      color: #fff;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(76, 175, 80, 0.45);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(76, 175, 80, 0.55);
+      background: linear-gradient(135deg, #56c25a 0%, #1b5e20 100%);
+    }
+
+    .btn-primary:hover::after {
+      opacity: 1;
+    }
+
+    .btn-primary:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.7);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-secondary:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+
+
+    .hero {
+      position: relative;
+      min-height: 520px;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.45)), url('images/hero_image.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 11px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #4caf50;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* PREMIUM TEXT OVERLAY */
+    .premium-text {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      font-size: clamp(80px, 12vw, 160px);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.06);
+      line-height: 1;
+      letter-spacing: -4px;
+      pointer-events: none;
+      padding-left: 30px;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a3c1e;
+      margin-bottom: 4px;
+    }
+
+    .form-card p {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #333;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #2e7d32;
+    }
+
+    .form-group select {
+      color: #666;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      width: 50%;
+      background: linear-gradient(135deg, #2e7d32, #388e3c);
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      margin-top: 6px;
+      transition: opacity .2s;
+    }
+
+    .btn-primary-form {
+      width: 100%;
+      background: linear-gradient(135deg, #2e7d32, #388e3c);
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      margin-top: 6px;
+      transition: opacity .2s;
+    }
+
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .who-section {
+      background: #f7fbf7;
+      padding: 72px 40px;
+    }
+
+    .who-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .who-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .who-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .who-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 32px 24px;
+      border: 1px solid #e0f0e0;
+      border-left: 4px solid #2e7d32;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(46, 125, 50, 0.07);
+      transition: transform 0.26s ease, box-shadow 0.26s ease, border-left-color 0.26s ease;
+      cursor: default;
+    }
+
+    .who-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(46, 125, 50, 0.14);
+      border-left-color: #4caf50;
+    }
+
+    .who-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .who-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a3c1e;
+      line-height: 1.35;
+    }
+
+    .who-card-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+      margin-top: -4px;
+    }
+
+    @media (max-width: 900px) {
+      .who-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .who-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* TRUST BLOCK */
+    .trust-block {
+      background: #1a3c1e;
+      padding: 56px 40px;
+    }
+
+    .trust-block-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 60px;
+      align-items: start;
+    }
+
+    .trust-block-left {
+      grid-column: 1 / -1;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .trust-block-tag {
+      display: inline-block;
+      background: rgba(165, 214, 167, 0.15);
+      color: #a5d6a7;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.6px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(165, 214, 167, 0.3);
+      text-transform: uppercase;
+    }
+
+    .trust-block-title {
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .trust-block-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.6;
+    }
+
+    .trust-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .trust-item-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(76, 175, 80, 0.2);
+      border: 1.5px solid rgba(76, 175, 80, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .trust-item-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: #81c784;
+    }
+
+    .trust-item-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .trust-block-inner {
+        grid-template-columns: 1fr;
+        gap: 20px 0;
+      }
+    }
+
+
+
+
+    /* PRODUCT RANGE BTN */
+    .product-range-cta {
+      text-align: center;
+      padding: 20px;
+      background: #f8faf8;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #2e7d32;
+      color: #2e7d32;
+      padding: 10px 28px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-outline:hover {
+      background: #2e7d32;
+      color: #fff;
+    }
+
+    /* SECTION */
+    section {
+      padding: 64px 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      border: 1px solid #c8e6c9;
+    }
+
+    .section-title {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 800;
+      color: #1a3c1e;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 36px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* PRODUCTS SECTION */
+    .products-section {
+      background: #fff;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    /* TULSI BANNER */
+    .tulsi-banner {
+      background: linear-gradient(rgba(15, 50, 20, 0.88), rgba(15, 50, 20, 0.85)), url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&q=80') center/cover;
+      padding: 50px 60px;
+      border-radius: 10px;
+      margin: 40px 0;
+    }
+
+    .tulsi-banner h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #a5d6a7;
+      margin-bottom: 12px;
+    }
+
+    .tulsi-banner p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.75;
+      max-width: 780px;
+    }
+
+    /* HERB CARDS */
+    .herb-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .herb-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e8f5e9;
+    }
+
+    .herb-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .herb-card-body {
+      padding: 24px;
+    }
+
+    .herb-card-body h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a3c1e;
+      margin-bottom: 10px;
+    }
+
+    .herb-card-body p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* WHY CHOOSE */
+    .why-section {
+      background: #f4faf4;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      border: 1px solid #e0f0e0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: #e8f5e9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: #2e7d32;
+    }
+
+    .feature-card h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a3c1e;
+      margin-bottom: 4px;
+    }
+
+    .feature-card p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* INDUSTRIES */
+    .industries-section {
+      background: #fff;
+    }
+
+    .industries-circle-wrap {
+      position: relative;
+      width: 420px;
+      height: 420px;
+      margin: 40px auto;
+    }
+
+    .circle-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 130px;
+      height: 130px;
+      background: linear-gradient(135deg, #1a3c1e, #2e7d32);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 12px;
+      z-index: 2;
+      box-shadow: 0 4px 20px rgba(46, 125, 50, 0.3);
+    }
+
+    .circle-center .ci-title {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .circle-center .ci-sub {
+      font-size: 10px;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    .ind-item {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 110px;
+    }
+
+    .ind-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+      font-size: 22px;
+    }
+
+    .ind-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a3c1e;
+      line-height: 1.3;
+    }
+
+    /* Position each item around the circle */
+    .ind-1 {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ind-2 {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    .ind-3 {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ind-4 {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .ind-5 {
+      top: 15%;
+      right: 8%;
+    }
+
+    /* Connector lines */
+    .ind-connector {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px dashed #c8e6c9;
+      pointer-events: none;
+    }
+
+    /* Simpler industries grid for clarity */
+    .industries-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .ind-card {
+      background: #f4faf4;
+      border: 2px solid #c8e6c9;
+      border-radius: 50px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a3c1e;
+    }
+
+    .ind-card span {
+      font-size: 20px;
+    }
+
+    /* QUALITY / PACKAGING */
+    .quality-section {
+      background: #1a3c1e;
+    }
+
+    .quality-section .section-title {
+      color: #fff;
+    }
+
+    .quality-section .section-sub {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .quality-section .section-tag {
+      background: rgba(165, 214, 167, 0.15);
+      color: #a5d6a7;
+      border-color: rgba(165, 214, 167, 0.3);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.15);
+      z-index: 0;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #2e7d32;
+      border: 3px solid #4caf50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 22px;
+    }
+
+    .step-arrow {
+      position: absolute;
+      top: 30px;
+      right: -10px;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 18px;
+      transform: translateY(-50%);
+    }
+
+    .process-step:last-child .step-arrow {
+      display: none;
+    }
+
+    .step-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #a5d6a7;
+      margin-bottom: 5px;
+    }
+
+    .step-desc {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.5;
+      padding: 0 8px;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, #1a3c1e, #2e7d32);
+      padding: 64px 40px;
+    }
+
+    .cta-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .cta-start {
+      font-size: 11px;
+      font-weight: 700;
+      color: #a5d6a7;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .cta-title {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .cta-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .cta-check {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cta-check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-check-item::before {
+      content: '✓';
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: #a5d6a7;
+    }
+
+    .cta-img {
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .cta-img img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0d1f0f;
+      padding: 40px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand-sub {
+      font-size: 11px;
+      color: #aaa;
+      margin-bottom: 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .footer-col h5 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #4caf50;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .footer-col p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 28px 0;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.35);
+      text-align: center;
+    }
+
+    /* HERO BOTTOM PREMIUM TEXT */
+    .hero-premium-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: clamp(80px, 15vw, 180px);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.05);
+      line-height: 0.9;
+      pointer-events: none;
+      letter-spacing: -4px;
+      padding-left: 20px;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 4px;
+      background: linear-gradient(90deg, #2e7d32, #66bb6a, #2e7d32);
+    }
+
+    /* MOBILE */
+    @media(max-width:768px) {
+
+      .hero-inner,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid,
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .herb-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 12px 20px;
+      }
+
+      section {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M17 8C8 10 5.9 16.17 3.82 21H5.71C7.77 16.3 11 13 17 12V8zm3 0v4c0 4.42-3.58 8-8 8H7.76C9.15 20 10.5 20 12 20c6.63 0 11-5.37 11-12z" />
+        </svg>
+      </div>
+      <div>
+        <div class="nav-brand">ADEPT IMPEX<br><small>PRIVATE LIMITED</small></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-premium-overlay">ПРЕМИУМ</div>
+    <div class="hero-inner">
+      <!-- Left -->
+      <div class="hero-content">
+
+        <!-- Headline -->
+        <h1>
+          Поставки сушёных трав из Индии напрямую для бизнеса в России
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="hero-sub">
+          Оптовые поставки • Экспортные документы • Доставка в Россию и страны СНГ
+        </p>
+
+        <!-- Trust Strip -->
+        <div class="hero-trust">
+          <span>Экспорт в 10+ стран</span>
+          <span>Сертификация ISO и GMP</span>
+          <span>Контроль качества перед отправкой</span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta">
+          <a href="#" class="btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24">
+              <path
+                d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8zm0-4h8v2H8zm0-4h5v2H8z" />
+            </svg>
+            Получить прайс-лист
+          </a>
+          <a href="https://wa.me/919897662984" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            Связаться в WhatsApp
+          </a>
+        </div>
+
+      </div>
+      <!-- Form -->
+      <form class="form-card">
+        <h3>Получите оптовое предложение в течение 24 часов</h3>
+        <p>Все ваши товары хорошо поставляются и доступны в течение 72 часов</p>
+
+        <div class="form-group">
+          <label>Имя *</label>
+          <input type="text" placeholder="Ваше имя" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email или WhatsApp *</label>
+          <input type="text" placeholder="Введите email или номер WhatsApp" required>
+        </div>
+
+        <div class="form-group">
+          <label>Какой продукт вас интересует?</label>
+          <select>
+            <option value="" disabled selected>Выберите продукт</option>
+            <option>Тулси (Кришна)</option>
+            <option>Тулси (Рама)</option>
+            <option>Тулси (Вана)</option>
+            <option>Мята перечная</option>
+            <option>Мята кудрявая</option>
+            <option>Ромашка</option>
+            <option>Другое</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary-form">Получить предложение</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- WHO IS THIS FOR SECTION -->
+
+  <section class="who-section" id="who-section">
+    <div class="who-inner">
+      <div class="who-header">
+        <span class="section-tag">Наши клиенты</span>
+        <h2 class="section-title">Кому предназначены наши поставки</h2>
+        <p class="section-sub">Мы работаем с ведущими игроками различных отраслей по всему миру</p>
+      </div>
+
+      <div class="who-cards">
+
+        <!-- Card 1 -->
+        <div class="who-card">
+          <div class="who-card-icon">🍵</div>
+          <div>
+            <div class="who-card-title">Производители травяных чаёв</div>
+            <p class="who-card-desc">Чистое сырьё для создания ароматных и целебных чайных купажей.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="who-card">
+          <div class="who-card-icon">💊</div>
+          <div>
+            <div class="who-card-title">Фармацевтические компании</div>
+            <p class="who-card-desc">Стандартизированные растительные экстракты для фармацевтических формул.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="who-card">
+          <div class="who-card-icon">🌿</div>
+          <div>
+            <div class="who-card-title">Бренды натуральной косметики</div>
+            <p class="who-card-desc">Органические ботанические ингредиенты для линеек по уходу за кожей.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="who-card">
+          <div class="who-card-icon">📦</div>
+          <div>
+            <div class="who-card-title">Оптовые дистрибьюторы</div>
+            <p class="who-card-desc">Крупные партии с гибкими условиями и надёжной логистикой.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <!-- <section class="why-section">
+    <div class="container text-center">
+      <div class="section-tag">Почему выбирают нас</div>
+      <h2 class="section-title">Почему мировые покупатели выбирают Adept Impex</h2>
+      <p class="section-sub">Ваш надёжный партнёр для стабильных, качественных поставок сушёных трав</p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
+            </svg>
+          </div>
+          <div>
+            <h5>Стабильные оптовые поставки круглый год</h5>
+            <p>Бесперебойные поставки трав в любое время года, независимо от сезона</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+          </div>
+          <div>
+            <h5>Сильная сеть поставщиков в ключевых регионах</h5>
+            <p>Прямое сотрудничество с фермерами в основных регионах выращивания трав в Индии</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+            </svg>
+          </div>
+          <div>
+            <h5>Строгий контроль качества перед отгрузкой</h5>
+            <p>Каждая партия проходит обязательную проверку качества перед отправкой</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V6h16v12z" />
+            </svg>
+          </div>
+          <div>
+            <h5>Упаковка с контролем влажности для экспорта</h5>
+            <p>Специализированная упаковка, сохраняющая свежесть и качество при международном транзите</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
+            </svg>
+          </div>
+          <div>
+            <h5>Конкурентоспособные оптовые цены</h5>
+            <p>Прозрачное ценообразование и лучшие рыночные ставки для оптовых покупателей</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-.5 1.5l1.96 2.5H17V9.5h2.5zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm13.5-1c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1z" />
+            </svg>
+          </div>
+          <div>
+            <h5>Бесперебойная логистика и документация</h5>
+            <p>Полное сопровождение экспортных документов и международной доставки</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section> -->
+
+
+  <!-- Trust block -->
+  <div class="trust-block" id="trust-block">
+    <div class="trust-block-inner">
+
+      <!-- Col 1: Title -->
+      <div class="trust-block-left">
+        <span class="trust-block-tag">Доверие</span>
+        <h2 class="trust-block-title">Почему компании выбирают Adept Impex</h2>
+        <p class="trust-block-sub">Многолетний опыт и полный цикл экспортных услуг — всё, что нужно надёжному партнёру
+        </p>
+      </div>
+
+      <!-- Col 2: Items 1-3 -->
+      <div class="trust-col">
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z" />
+            </svg>
+          </div>
+          <span class="trust-item-label">Опыт международных поставок</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V6h16v12z" />
+            </svg>
+          </div>
+          <span class="trust-item-label">Экспортная упаковка с контролем влажности</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+            </svg>
+          </div>
+          <span class="trust-item-label">Стабильные поставки круглый год</span>
+        </div>
+      </div>
+
+      <!-- Col 3: Items 4-6 -->
+      <div class="trust-col">
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+            </svg>
+          </div>
+          <span class="trust-item-label">Строгий контроль качества и сортировки</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg>
+          </div>
+          <span class="trust-item-label">Подготовка всей экспортной документации</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
+            </svg>
+          </div>
+          <span class="trust-item-label">Конкурентные оптовые цены</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXPORT CONFIDENCE SECTION -->
+  <style>
+    .export-section {
+      background: #fff;
+      padding: 72px 40px;
+      border-top: 1px solid #e8f5e9;
+    }
+
+    .export-header {
+      max-width: 1100px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .export-title {
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 800;
+      color: #1a3c1e;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .export-sub {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* 2×2 grid */
+    .export-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .export-card {
+      background: #f7fbf7;
+      border: 1px solid #e0f0e0;
+      border-radius: 14px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 2px 10px rgba(46, 125, 50, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      /* initial hidden state for animation */
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .export-card.visible {
+      animation: exportFadeUp 0.55s ease forwards;
+    }
+
+    .export-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .export-card:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .export-card:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes exportFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .export-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(46, 125, 50, 0.13);
+    }
+
+    .export-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .export-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #2e7d32;
+    }
+
+    .export-card-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a3c1e;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 600px) {
+      .export-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <section class="export-section" id="export-section">
+
+    <!-- Row 1: Heading -->
+    <div class="export-header">
+      <span class="section-tag">Экспорт</span>
+      <h2 class="export-title">Экспорт и логистика</h2>
+      <p class="export-sub">Полное сопровождение на каждом этапе — от подготовки документов до доставки на склад
+        покупателя.</p>
+    </div>
+
+    <!-- Row 2: 2×2 animated grid -->
+    <div class="export-grid" id="exportGrid">
+
+      <div class="export-card">
+        <div class="export-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+          </svg>
+        </div>
+        <span class="export-card-label">Подготовка всех экспортных документов</span>
+      </div>
+
+      <div class="export-card">
+        <div class="export-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z" />
+          </svg>
+        </div>
+        <span class="export-card-label">Поддержка при таможенном оформлении</span>
+      </div>
+
+      <div class="export-card">
+        <div class="export-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-.5 1.5l1.96 2.5H17V9.5h2.5zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm13.5-1c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1z" />
+          </svg>
+        </div>
+        <span class="export-card-label">Гибкие условия доставки</span>
+      </div>
+
+      <div class="export-card">
+        <div class="export-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
+          </svg>
+        </div>
+        <span class="export-card-label">Возможность долгосрочных контрактов</span>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Staggered scroll animation for export cards
+    const exportCards = document.querySelectorAll('#exportGrid .export-card');
+    const exportObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          exportObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    exportCards.forEach(card => exportObserver.observe(card));
+  </script>
+
+  <!-- PRODUCT RANGE BTN -->
+  <!-- <div class="product-range-cta">
+    <button class="btn-outline">Наш ассортимент продуктов ↓</button>
+  </div> -->
+
+  <!-- PRODUCTS SECTION (premium) -->
+  <style>
+    .products-premium {
+      background: linear-gradient(135deg, #0d2610 0%, #1a3c1e 50%, #0f2a12 100%);
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle radial glow in background */
+    .products-premium::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(76, 175, 80, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .products-premium-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .products-premium .section-tag {
+      background: rgba(165, 214, 167, 0.15);
+      color: #a5d6a7;
+      border-color: rgba(165, 214, 167, 0.3);
+    }
+
+    .products-premium .section-title {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .products-premium-sub {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 52px;
+    }
+
+    /* 2×2 card grid */
+    .product-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .product-card-premium {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 2px solid rgba(76, 175, 80, 0.6);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+      /* scroll animation start */
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .product-card-premium.visible {
+      animation: prodFadeUp 0.6s ease forwards;
+    }
+
+    .product-card-premium:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .product-card-premium:nth-child(3) {
+      animation-delay: 0.18s;
+    }
+
+    .product-card-premium:nth-child(4) {
+      animation-delay: 0.26s;
+    }
+
+    @keyframes prodFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* shimmer sweep on hover */
+    .product-card-premium::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.07) 50%, transparent 60%);
+      transition: left 0.5s ease;
+    }
+
+    .product-card-premium:hover::after {
+      left: 160%;
+    }
+
+    .product-card-premium:hover {
+      background: rgba(255, 255, 255, 0.10);
+      border-top-color: #4caf50;
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(76, 175, 80, 0.2);
+    }
+
+    .pcard-emoji {
+      font-size: 36px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .pcard-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .pcard-sub {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.5;
+    }
+
+    /* glowing bulk note */
+    .bulk-glow-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(76, 175, 80, 0.12);
+      border: 1px solid rgba(76, 175, 80, 0.35);
+      color: #81c784;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 50px;
+      letter-spacing: 0.4px;
+      box-shadow: 0 0 24px rgba(76, 175, 80, 0.15);
+    }
+
+    .bulk-glow-dot {
+      width: 9px;
+      height: 9px;
+      background: #4caf50;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #4caf50;
+      animation: breathe 2s ease-in-out infinite;
+    }
+
+    @media (max-width: 600px) {
+      .product-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <section class="products-premium" id="products-section">
+    <div class="products-premium-inner">
+      <span class="section-tag">Продукция</span>
+      <h2 class="section-title">Наш ассортимент</h2>
+      <p class="products-premium-sub">Премиальное сырьё для мировых рынков — напрямую от производителя</p>
+
+      <div class="product-cards-grid" id="productCardsGrid">
+
+        <div class="product-card-premium">
+          <span class="pcard-emoji">🌿</span>
+          <div class="pcard-title">Тулси (Кришна, Рама, Вана)</div>
+          <div class="pcard-sub">Священный базилик — высушенные листья оптом для чайных брендов и производителей добавок
+          </div>
+        </div>
+
+        <div class="product-card-premium">
+          <span class="pcard-emoji">🍃</span>
+          <div class="pcard-title">Мята (перечная, кудрявая)</div>
+          <div class="pcard-sub">Ароматные листья для травяных чаёв, косметики и велнес-формул</div>
+        </div>
+
+        <div class="product-card-premium">
+          <span class="pcard-emoji">💊</span>
+          <div class="pcard-title">Лекарственные травы</div>
+          <div class="pcard-sub">Стандартизированное растительное сырьё для фармацевтических компаний</div>
+        </div>
+
+        <div class="product-card-premium">
+          <span class="pcard-emoji">🌱</span>
+          <div class="pcard-title">Органические травы</div>
+          <div class="pcard-sub">Сертифицированное органическое сырьё для натуральных брендов и нутрицевтики</div>
+        </div>
+
+      </div>
+
+      <div class="bulk-glow-note">
+        <span class="bulk-glow-dot"></span>
+        Доступны крупные партии под заказ
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const prodCards = document.querySelectorAll('#productCardsGrid .product-card-premium');
+    const prodObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          prodObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    prodCards.forEach(c => prodObserver.observe(c));
+  </script>
+
+
+  <!-- INDUSTRIES -->
+  <section class="industries-section">
+    <div class="container text-center">
+      <div class="section-tag">Отрасли обслуживания</div>
+      <h2 class="section-title">Отрасли, которые мы обслуживаем</h2>
+      <p class="section-sub">Мы поставляем травы ведущим производителям в различных секторах</p>
+      <div class="industries-grid">
+        <div class="ind-card"><span>🍵</span> Пищевая промышленность и напитки</div>
+        <div class="ind-card"><span>💊</span> Фармацевтическое производство</div>
+        <div class="ind-card"><span>✨</span> Косметические ингредиенты</div>
+        <div class="ind-card"><span>🌿</span> Аюрведическое и травяное производство</div>
+        <div class="ind-card"><span>💚</span> Велнес и нутрицевтические бренды</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY / PACKAGING -->
+  <section class="quality-section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:0;">
+        <div class="section-tag">Контроль качества</div>
+        <h2 class="section-title">Экспортная обработка и упаковка</h2>
+        <p class="section-sub">Все травы проходят профессиональную сортировку и упаковываются в соответствии с
+          принципами качественной упаковки для обеспечения свежести и безопасности при глобальном транзите.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-circle">🧹</div>
+          <div class="step-arrow">›</div>
+          <div class="step-title">Очистка</div>
+          <div class="step-desc">Тщательная очистка для удаления всех примесей и загрязнений</div>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">☀️</div>
+          <div class="step-arrow">›</div>
+          <div class="step-title">Сушка</div>
+          <div class="step-desc">Оптимизированная сушка с контролем температурного режима</div>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">⚖️</div>
+          <div class="step-arrow">›</div>
+          <div class="step-title">Сортировка</div>
+          <div class="step-desc">Качественная сортировка по установленным стандартам и критериям</div>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">📦</div>
+          <div class="step-arrow">›</div>
+          <div class="step-title">Упаковка</div>
+          <div class="step-desc">Влагостойкая упаковка, соответствующая стандартам FDA</div>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">📊</div>
+          <div class="step-arrow"></div>
+          <div class="step-title">Контроль влажности</div>
+          <div class="step-desc">Мониторинг влажности на всех этапах — менее 8% для сохранности</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section">
+    <div class="cta-inner">
+      <!-- Left -->
+      <div>
+        <div class="cta-start">Начните свой заказ сегодня</div>
+        <h2 class="cta-title">Получите оптовые цены и информацию о наличии продукции</h2>
+        <p class="cta-desc">Хотите закупить сушёную тулси и другие травы оптом для экспорта? Свяжитесь с Adept Impex
+          сегодня для получения информации о ценах и условиях поставки.</p>
+        <div class="cta-check">
+          <div class="cta-check-item">Конкурентоспособные оптовые цены</div>
+          <div class="cta-check-item">Ответ с расчётом в течение 24 часов</div>
+          <div class="cta-check-item">Бесплатная доставка при заказе от $500</div>
+        </div>
+        <div class="cta-img" style="margin-top:24px;">
+          <img src="https://images.unsplash.com/photo-1611735341450-74d61e660ad2?w=600&q=80" alt="Упаковка трав">
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="form-card">
+        <h3>Получить оптовые цены мгновенно</h3>
+        <p>Все ваши товары хорошо поставляются и доступны в течение 72 часов</p>
+        <div class="form-group">
+          <label>Полное имя *</label>
+          <input type="text" placeholder="Ваше полное имя">
+        </div>
+        <div class="form-group">
+          <label>Название компании *</label>
+          <input type="text" placeholder="Название вашей компании">
+        </div>
+        <div class="form-group">
+          <label>Корпоративный email *</label>
+          <input type="email" placeholder="email@компания.com">
+        </div>
+        <div class="form-group">
+          <label>Номер телефона *</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+        <div class="form-group">
+          <label>Требуемые продукты *</label>
+          <select>
+            <option value="" disabled selected>Выберите продукт</option>
+            <option>Сушёные листья туласи</option>
+            <option>Листья мяты перечной</option>
+            <option>Листья мяты колосковой</option>
+            <option>Органические травы</option>
+            <option>Лекарственные травы</option>
+            <option>Цветы ромашки</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Количество закупки *</label>
+          <input type="text" placeholder="напр., 500 кг, 1 тонна">
+        </div>
+        <div class="form-group">
+          <label>Выберите страну</label>
+          <select>
+            <option value="" disabled selected>Выберите страну</option>
+            <option>Россия</option>
+            <option>Германия</option>
+            <option>США</option>
+            <option>Китай</option>
+            <option>Великобритания</option>
+            <option>ОАЭ</option>
+            <option>Другая</option>
+          </select>
+        </div>
+        <button class="btn-primary">Получить оптовое предложение</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Adept Impex Private Limited</div>
+      <div class="footer-brand-sub">Экспортёр трав и ботанических продуктов из Индии</div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>Адрес</h5>
+          <p>165, Kaveri Kunj Phase-II, 100,<br>Kamla Nagar, Agra, Phase II,<br>Kamla Nagar,
+            Agra-282005<br>Уттар-Прадеш, Индия</p>
+        </div>
+        <div class="footer-col">
+          <h5>Телефон</h5>
+          <p>+91 98976 62984</p>
+        </div>
+        <div class="footer-col">
+          <h5>Email</h5>
+          <p>aipl@adeptimpex.com</p>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">© Adept Impex Private Limited — Все права защищены</p>
+    </div>
+  </footer>
+
+
+
+
+  <!-- FLOATING CONTACT BUTTONS -->
+  <style>
+    /* Floating buttons container */
+    .float-contact {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 9999;
+    }
+
+    /* Individual button wrapper (holds button + pulse ring) */
+    .float-btn-wrap {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* The pulse ring */
+    .float-btn-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: inherit;
+      animation: breathe 2.4s ease-in-out infinite;
+      opacity: 0;
+      z-index: 0;
+    }
+
+    /* Phone button */
+    .float-phone-wrap::before {
+      background: rgba(37, 211, 102, 0.55);
+    }
+
+    /* WhatsApp button */
+    .float-wa-wrap::before {
+      background: rgba(37, 211, 102, 0.55);
+      animation-delay: 0.4s;
+    }
+
+    /* Breathing keyframe */
+    @keyframes breathe {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      60% {
+        transform: scale(1.7);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1.7);
+        opacity: 0;
+      }
+    }
+
+    /* Actual circle button */
+    .float-btn {
+      position: relative;
+      z-index: 1;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6);
+    }
+
+    .float-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: #fff;
+    }
+
+    /* Tooltip labels */
+    .float-btn::after {
+      content: attr(data-label);
+      position: absolute;
+      right: 66px;
+      background: #1a1a1a;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateX(6px);
+    }
+
+    .float-btn:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+
+  <div class="float-contact">
+    <!-- Phone -->
+    <div class="float-btn-wrap float-phone-wrap">
+      <a href="tel:+919897662984" class="float-btn" data-label="Позвонить нам" aria-label="Позвонить нам">
+        <!-- Phone icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.49 11.49 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.16 21 3 13.84 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.49 11.49 0 0 0 .57 3.6 1 1 0 0 1-.25 1.01l-2.2 2.18z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="float-btn-wrap float-wa-wrap">
+      <a href="https://wa.me/919897662984" target="_blank" rel="noopener noreferrer" class="float-btn"
+        data-label="WhatsApp" aria-label="WhatsApp">
+        <!-- WhatsApp icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+          <path
+            d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.975-1.412A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.952 7.952 0 0 1-4.273-1.243l-.306-.184-3.16.898.896-3.083-.202-.32A7.952 7.952 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+</body>
+
+</html>
