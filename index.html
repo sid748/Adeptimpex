@@ -1198,7 +1198,7 @@
 
         <!-- CTA Buttons -->
         <div class="hero-cta">
-          <a href="#" class="btn-primary">
+          <a href="#contact-form" class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;">
             <svg class="btn-icon" viewBox="0 0 24 24">
               <path
                 d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8zm0-4h8v2H8zm0-4h5v2H8z" />
@@ -1216,7 +1216,7 @@
 
       </div>
       <!-- Form -->
-      <form class="form-card">
+      <form class="form-card" id="contact-form">
         <h3>Получите оптовое предложение в течение 24 часов</h3>
         <p>Все ваши товары хорошо поставляются и доступны в течение 72 часов</p>
 
@@ -1230,19 +1230,7 @@
           <input type="text" placeholder="Введите email или номер WhatsApp" required>
         </div>
 
-        <div class="form-group">
-          <label>Какой продукт вас интересует?</label>
-          <select>
-            <option value="" disabled selected>Выберите продукт</option>
-            <option>Тулси (Кришна)</option>
-            <option>Тулси (Рама)</option>
-            <option>Тулси (Вана)</option>
-            <option>Мята перечная</option>
-            <option>Мята кудрявая</option>
-            <option>Ромашка</option>
-            <option>Другое</option>
-          </select>
-        </div>
+
 
         <button type="submit" class="btn-primary-form">Получить предложение</button>
       </form>
