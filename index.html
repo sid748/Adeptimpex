@@ -1198,12 +1198,20 @@
 
         <!-- CTA Buttons -->
         <div class="hero-cta">
-          <a href="#contact-form" class="btn-primary"
-            onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;">
+          <a href="#contact-form" class="btn-primary" onclick="event.preventDefault(); 
+   document.getElementById('contact-form')
+   .querySelector('input')
+   .scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+   document.getElementById('contact-form')
+   .querySelector('input')
+   .focus();">
+
             <svg class="btn-icon" viewBox="0 0 24 24">
               <path
                 d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15h8v2H8zm0-4h8v2H8zm0-4h5v2H8z" />
             </svg>
+
             Получить прайс-лист
           </a>
           <a href="https://wa.me/919897662984" class="btn-secondary" target="_blank" rel="noopener noreferrer">
@@ -1394,7 +1402,7 @@
 
       <!-- Col 1: Title -->
       <div class="trust-block-left">
-        <span class="trust-block-tag">Доверие</span>
+        <!-- <span class="trust-block-tag">Доверие</span> -->
         <h2 class="trust-block-title">Почему компании выбирают Adept Impex</h2>
         <p class="trust-block-sub">Многолетний опыт и полный цикл экспортных услуг — всё, что нужно надёжному партнёру
         </p>
@@ -1959,7 +1967,7 @@
         <div class="cta-check">
           <div class="cta-check-item">Конкурентоспособные оптовые цены</div>
           <div class="cta-check-item">Ответ с расчётом в течение 24 часов</div>
-          <div class="cta-check-item">Бесплатная доставка при заказе от $500</div>
+          <!-- <div class="cta-check-item">Бесплатная доставка при заказе от $500</div> -->
         </div>
         <div class="cta-img" style="margin-top:24px;">
           <img src="https://images.unsplash.com/photo-1611735341450-74d61e660ad2?w=600&q=80" alt="Упаковка трав">
@@ -1967,82 +1975,69 @@
       </div>
 
       <!-- Form -->
-      <div class="form-card">
-        <h3>Получить оптовые цены мгновенно</h3>
+      <form class="form-card" id="contact-form">
+        <h3>Получите оптовое предложение в течение 24 часов</h3>
         <p>Все ваши товары хорошо поставляются и доступны в течение 72 часов</p>
+
         <div class="form-group">
-          <label>Полное имя *</label>
-          <input type="text" placeholder="Ваше полное имя">
+          <label>Имя *</label>
+          <input type="text" placeholder="Ваше имя" required>
         </div>
+
         <div class="form-group">
-          <label>Название компании *</label>
-          <input type="text" placeholder="Название вашей компании">
+          <label>Email или WhatsApp *</label>
+          <input type="text" placeholder="Введите email или номер WhatsApp" required>
         </div>
+
+
+
         <div class="form-group">
-          <label>Корпоративный email *</label>
-          <input type="email" placeholder="email@компания.com">
+          <label>Какой продукт вас интересует?</label>
+          <input type="text" placeholder="Например: Тулси, Мята, Ромашка...">
         </div>
-        <div class="form-group">
-          <label>Номер телефона *</label>
-          <input type="tel" placeholder="+7 (___) ___-__-__">
-        </div>
-        <div class="form-group">
-          <label>Требуемые продукты *</label>
-          <select>
-            <option value="" disabled selected>Выберите продукт</option>
-            <option>Сушёные листья туласи</option>
-            <option>Листья мяты перечной</option>
-            <option>Листья мяты колосковой</option>
-            <option>Органические травы</option>
-            <option>Лекарственные травы</option>
-            <option>Цветы ромашки</option>
-            <option>Другое</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Количество закупки *</label>
-          <input type="text" placeholder="напр., 500 кг, 1 тонна">
-        </div>
-        <div class="form-group">
-          <label>Выберите страну</label>
-          <select>
-            <option value="" disabled selected>Выберите страну</option>
-            <option>Россия</option>
-            <option>Германия</option>
-            <option>США</option>
-            <option>Китай</option>
-            <option>Великобритания</option>
-            <option>ОАЭ</option>
-            <option>Другая</option>
-          </select>
-        </div>
-        <button class="btn-primary">Получить оптовое предложение</button>
-      </div>
+
+        <button type="submit" class="btn-primary-form">Получить предложение</button>
+      </form>
     </div>
   </div>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
+
       <div class="footer-brand">Adept Impex Private Limited</div>
       <div class="footer-brand-sub">Экспортёр трав и ботанических продуктов из Индии</div>
+
       <div class="footer-grid">
+
         <div class="footer-col">
           <h5>Адрес</h5>
-          <p>165, Kaveri Kunj Phase-II, 100,<br>Kamla Nagar, Agra, Phase II,<br>Kamla Nagar,
-            Agra-282005<br>Уттар-Прадеш, Индия</p>
+          <p>
+            165, Kaveri Kunj Phase-II, 100,<br>
+            Камла Нагар, Фаза II,<br>
+            Агра – 282005<br>
+            Уттар-Прадеш, Индия
+          </p>
         </div>
+
         <div class="footer-col">
           <h5>Телефон</h5>
           <p>+91 98976 62984</p>
         </div>
+
         <div class="footer-col">
-          <h5>Email</h5>
+          <h5>Электронная почта</h5>
           <p>aipl@adeptimpex.com</p>
         </div>
+
       </div>
+
       <hr class="footer-divider">
-      <p class="footer-copy">© Adept Impex Private Limited — Все права защищены</p>
+
+      <p class="footer-copy">
+        © Adept Impex Private Limited — Все права защищены
+      </p>
+
     </div>
   </footer>
 
